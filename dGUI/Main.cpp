@@ -23,7 +23,11 @@ int main()
 	while (gui.isOpen())
 	{
 		i++;
-		sprintf_s(str, "%d", index);
+		#ifdef _WIN32
+			sprintf_s(str, "%d", index);
+		#else
+			sprintf(str, "%d", index);
+		#endif
 		index++;
 
 		label1.text = str;
