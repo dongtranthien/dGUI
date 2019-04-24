@@ -12,7 +12,8 @@ using namespace std;
 class dGui: public sf::Window, label{
 	public:
 		dGui(uint16_t width, uint16_t height);
-		void update();		
+		~dGui();
+                void update();		
 		void add(label &label_);
 		bool isOpen();
 	private:
