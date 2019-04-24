@@ -9,6 +9,14 @@ dGui::dGui(uint16_t width, uint16_t height) {
 	labels_num = 0;
 }
 
+dGui::~dGui(){
+	uint16_t i;
+	for(i = 0; i < labels_num; i++){
+		free(label[i]);
+	}
+	free(label);
+}
+
 void dGui::update() {
 	sf::Event event;
 	while (window.pollEvent(event))
